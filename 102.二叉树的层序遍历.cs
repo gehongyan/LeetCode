@@ -21,29 +21,10 @@
 public class Solution {
     public IList<IList<int>> LevelOrder(TreeNode root) {
 
-        if(root == null) return new List<int>().ToArray();
-
-        Queue<TreeNodeWithDepth> queue = new Queue<TreeNodeWithDepth>();
-        
-        List<int> list = new List<int>();
-
-        queue.Enqueue(root);
-        while(queue.Count > 0)
-        {
-            TreeNode node = queue.Dequeue();
-            if(node != null) list.Add(node.val);
-
-            if(node.left != null) queue.Enqueue(node.left);
-            if(node.right != null) queue.Enqueue(node.right);
-        }
-        return list.ToArray();
+    
 
     }
 
-    public class TreeNodeWithDepth : TreeNode
-    {
-        public int depth;
-    }
 }
 // @lc code=end
 
